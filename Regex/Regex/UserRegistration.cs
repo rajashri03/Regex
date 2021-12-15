@@ -9,7 +9,7 @@ namespace UserReg
     public class UserRegistration
     {
         /// <summary>
-        /// Enter Valid First Name--First letter must be Capital and legth should be 3 Characters
+        /// Enter Valid First Name,Last Name,Email,Mobile Number
         /// </summary>
         /// <returns></returns>
         public string FirstName()
@@ -75,6 +75,26 @@ namespace UserReg
             }
             Console.WriteLine();
             return default;
+        }
+        public void Mobile()
+        {
+            Console.WriteLine("Enter Your Mobile");
+            string Mobile = Console.ReadLine();
+            string Regexphone = @"^[0-9]{2,4}[ ]{1}[6-9]{1}[0-9]{9}$";
+            Regex rg = new Regex(Regexphone);
+            if (rg.IsMatch(Mobile))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Mobile Number is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Mobile Number is not valid");
+                Console.ResetColor();
+            }
+            Console.WriteLine();
         }
     }
 }
