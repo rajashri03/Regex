@@ -5,7 +5,8 @@ UserRegistration User=new UserRegistration();
 bool flag = true;
 while(flag)
 {
-    Console.WriteLine("Select:\n1)Enter Valid First Name\n2)Enter Valid Last Name\n");
+    Console.WriteLine("Select:\n1)Enter Valid First Name\n" +
+        "2)Enter Valid Last Name\n");
     int op = Convert.ToInt16(Console.ReadLine());
     switch(op)
     {
