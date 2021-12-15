@@ -5,9 +5,12 @@ UserRegistration User=new UserRegistration();
 bool flag = true;
 while(flag)
 {
-    Console.WriteLine("Select:\n1)Enter Valid First Name\n2)Enter Valid Last Name\n" +
+    Console.WriteLine("Select:\n" +
+        "1)Enter Valid First Name\n" +
+        "2)Enter Valid Last Name\n" +
         "3)Enter Valid Email\n" +
-        "4)Enter Valid Mobile Number\n");
+        "4)Enter Valid Mobile Number\n" +
+        "5)Enter Password-Length shouble be 8");
     int op = Convert.ToInt16(Console.ReadLine());
     switch(op)
     {
@@ -22,6 +25,9 @@ while(flag)
             break;
         case 4:
             User.Mobile();
+            break;
+        case 5:
+            User.PasswordRule1();
             break;
         default:
             flag = !flag;

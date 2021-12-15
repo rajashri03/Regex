@@ -96,5 +96,25 @@ namespace UserReg
             }
             Console.WriteLine();
         }
+        public void PasswordRule1()
+        {
+            Console.WriteLine("Enter Your Password");
+            string Password1 = Console.ReadLine();
+            string Regexpassword1 = @"^[0-9a-zA-z]{8}$";
+            Regex rg = new Regex(Regexpassword1);
+            if (rg.IsMatch(Password1))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Password is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Must be at least 8 characters");
+                Console.ResetColor();
+            }
+            Console.WriteLine();
+        }
     }
 }
