@@ -9,7 +9,7 @@ namespace UserReg
     public class UserRegistration
     {
         /// <summary>
-        /// Enter Valid First Name,Last Name,Email,Mobile Number
+        /// Enter Valid First Name
         /// </summary>
         /// <returns></returns>
         public string FirstName()
@@ -34,6 +34,10 @@ namespace UserReg
             Console.WriteLine();
             return default;
         }
+        /// <summary>
+        /// Enter Valid Last Name
+        /// </summary>
+        /// <returns></returns>
         public string LastName()
         {
             Console.WriteLine("Enter Last Name");
@@ -55,6 +59,10 @@ namespace UserReg
             Console.WriteLine();
             return default;
         }
+        /// <summary>
+        /// Enter Valid Email
+        /// </summary>
+        /// <returns></returns>
         public string Email()
         {
             Console.WriteLine("Enter Your Email");
@@ -76,6 +84,10 @@ namespace UserReg
             Console.WriteLine();
             return default;
         }
+        /// <summary>
+        /// Enter Valid Mobile Number
+        /// </summary>
+        /// <returns></returns>
         public void Mobile()
         {
             Console.WriteLine("Enter Your Mobile");
@@ -96,6 +108,10 @@ namespace UserReg
             }
             Console.WriteLine();
         }
+        /// <summary>
+        /// Enter Valid Password-Must be atleast 8 characters
+        /// </summary>
+        /// <returns></returns>
         public void PasswordRule1()
         {
             Console.WriteLine("Enter Your Password");
@@ -112,6 +128,30 @@ namespace UserReg
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("Must be atleast 8 characters");
+                Console.ResetColor();
+            }
+            Console.WriteLine();
+        }
+        /// <summary>
+        /// Enter Valid Password-Should have atleast one uppercase
+        /// </summary>
+        /// <returns></returns>
+        public void PasswordRule2()
+        {
+            Console.WriteLine("Enter Your Password");
+            string Password2 = Console.ReadLine();
+            string Regexpassword2 = @"^(?=.*[A-Z])[0-9a-zA-z]{8}$";//
+            Regex rg = new Regex(Regexpassword2);
+            if (rg.IsMatch(Password2))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Password is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Should Have atleast One Uppercase ");
                 Console.ResetColor();
             }
             Console.WriteLine();

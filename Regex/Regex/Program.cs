@@ -10,7 +10,8 @@ while(flag)
         "2)Enter Valid Last Name\n" +
         "3)Enter Valid Email\n" +
         "4)Enter Valid Mobile Number\n" +
-        "5)Enter Password-Length shouble be 8");
+        "5)Enter Password-Length shouble be 8\n"+
+        "6)Enter Password-Should have atleast one Uppercase\n");
     int op = Convert.ToInt16(Console.ReadLine());
     switch(op)
     {
@@ -28,6 +29,9 @@ while(flag)
             break;
         case 5:
             User.PasswordRule1();
+            break;
+        case 6:
+            User.PasswordRule2();
             break;
         default:
             flag = !flag;
