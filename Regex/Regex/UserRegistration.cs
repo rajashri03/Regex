@@ -52,7 +52,27 @@ namespace UserReg
                 Console.Write("Last Name is not valid.(Please Enter First Letter Capital and Length of the LastName Should be 3 only)");
                 Console.ResetColor();
             }
-
+            Console.WriteLine();
+            return default;
+        }
+        public string Email()
+        {
+            Console.WriteLine("Enter Your Email");
+            string Email = Console.ReadLine();
+            string email = @"^[a-zA-Z0-9]+@[A-Za-z0-9]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2})?$";
+            Regex rg = new Regex(email);
+            if (rg.IsMatch(Email))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Email is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Email is not valid");
+                Console.ResetColor();
+            }
             Console.WriteLine();
             return default;
         }
