@@ -140,7 +140,7 @@ namespace UserReg
         {
             Console.WriteLine("Enter Your Password");
             string Password2 = Console.ReadLine();
-            string Regexpassword2 = @"^(?=.*[A-Z])[0-9a-zA-z]{8}$";
+            string Regexpassword2 = @"^(?=.*[A-Z])(?=.*[0-9])[0-9a-zA-z]{8}$";
             Regex rg = new Regex(Regexpassword2);
             if (rg.IsMatch(Password2))
             {
@@ -152,6 +152,29 @@ namespace UserReg
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("Should Have atleast One Uppercase ");
+                Console.ResetColor();
+            }
+            Console.WriteLine();
+        }
+        /// <summary>
+        /// Enter Valid Password-Should have atleast one uppercase and length should be 8 characters only
+        /// </summary>
+        public void PasswordRule3()
+        {
+            Console.WriteLine("Enter Your Password");
+            string Password3 = Console.ReadLine();
+            string Regexpassword3 = @"^(?=.*[A-Z])[0-9a-zA-z]{8}$";
+            Regex rg = new Regex(Regexpassword3);
+            if (rg.IsMatch(Password3))
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Password is Valid");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Should Have atleast numeric number and one Uppercase letter in the password ");
                 Console.ResetColor();
             }
             Console.WriteLine();
