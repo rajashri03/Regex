@@ -133,7 +133,7 @@ namespace UserReg
             Console.WriteLine();
         }
         /// <summary>
-        /// Enter Valid Password-Should have atleast one uppercase
+        /// Enter Valid Password-Should have atleast one uppercase and length should be 8 characters only
         /// </summary>
         /// <returns></returns>
         public void PasswordRule2()
