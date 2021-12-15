@@ -111,7 +111,7 @@ namespace UserReg
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("Must be at least 8 characters");
+                Console.Write("Must be atleast 8 characters");
                 Console.ResetColor();
             }
             Console.WriteLine();
