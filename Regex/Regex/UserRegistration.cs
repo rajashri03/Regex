@@ -179,5 +179,11 @@ namespace UserReg
             }
             Console.WriteLine();
         }
+        public string REGEX_Password = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-])[a-zA-Z0-9!@#$%^&*()_+=-]{8}$";
+        public bool Password4(string Password)
+        {
+            return Regex.IsMatch(Password, REGEX_Password);
+        }
+
     }
 }
