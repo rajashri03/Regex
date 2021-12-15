@@ -140,7 +140,7 @@ namespace UserReg
         {
             Console.WriteLine("Enter Your Password");
             string Password2 = Console.ReadLine();
-            string Regexpassword2 = @"^(?=.*[A-Z])[0-9a-zA-z]{8}$";//
+            string Regexpassword2 = @"^(?=.*[A-Z])[0-9a-zA-z]{8}$";
             Regex rg = new Regex(Regexpassword2);
             if (rg.IsMatch(Password2))
             {
